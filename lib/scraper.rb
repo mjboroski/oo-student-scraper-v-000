@@ -5,7 +5,7 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     doc=Nokigiri::HTML(open(index_url))
-    
+
   end
 
   def self.scrape_profile_page(profile_url)
@@ -14,4 +14,3 @@ class Scraper
   end
 
 end
-
