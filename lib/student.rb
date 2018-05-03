@@ -10,7 +10,7 @@ class Student
 
   def self.create_from_collection(students_array)
     students_array.each{|student| Student.new(student)}
-    doc=Nokogiri::HTML
+    # doc=Nokogiri::HTML
   end
 
   def add_student_attributes(attributes_hash)
