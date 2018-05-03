@@ -7,14 +7,21 @@ class Scraper
 
     doc=Nokogiri::HTML(open(index_url))
 
-    student_hash={}
+    students=[]
 
-    student_hash[:name]=doc.search("div.student-name").text
-    student_hash[:location]=doc.search("div.student-location").text
-    student_hash[:profile_url]=doc.search("div.student-card.a.href")
+    doc.css("div.roster-cards-container").each do |card|
 
-    Student.all<<student_hash
-    Student.all
+      card.css(".student-card a").each do |student|
+        link = "./fixtures/student-site/#{student.attr('href')}"
+        location = student.css('.student-location').text
+        name = student.css('.student-name').text
+        students << {name: name, location: location, profile_url: link}
+      end
+
+    end
+
+    students
+
   end
 
   def self.scrape_profile_page(profile_url)
