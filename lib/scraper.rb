@@ -25,11 +25,11 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    
+
     profile=Nokogiri::HTML(open(profile_url))
-    
+
     student={}
-    
+
     student[:profile_quote] = profile.css(".profile-quote").text if profile.css(".profile-quote")
     student[:bio] = profile.css("div.description-holder p").text if profile.css("div.description-holder p")
     social = profile.css(".social-icon-container").children.css("a").map { |el| el.attribute('href').value}
