@@ -8,7 +8,7 @@ class Scraper
     doc=Nokogiri::HTML(open(index_url))
 
     student_hash=nil
-    
+
     student_hash.link=doc.search("student-card.div.student-name").text
     student_hash.name=doc.search("div.student-card.id").text
     student_hash.location=doc.search("div.student-card.id").text
