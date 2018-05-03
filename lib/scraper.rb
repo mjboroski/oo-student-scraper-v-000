@@ -15,7 +15,7 @@ class Scraper
         link = "./fixtures/student-site/#{student.attr('href')}"
         location = student.css('.student-location').text
         name = student.css('.student-name').text
-        students << {profile_url: link, location: location, name: name}
+        students << {name: name, location: location, profile_url: link}
       end
 
     end
