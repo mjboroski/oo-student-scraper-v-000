@@ -9,9 +9,9 @@ class Scraper
 
     student_hash={}
 
-    student_hash[:link]=doc.search("div.student-card.a.href")
     student_hash[:name]=doc.search("div.student-name").text
     student_hash[:location]=doc.search("div.student-location").text
+    student_hash[:profile_url]=doc.search("div.student-card.a.href")
 
     Student.all<<student_hash
 
