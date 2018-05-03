@@ -15,7 +15,7 @@ class Scraper
         link = "./fixtures/student-site/#{student.attr('href')}"
         location = student.css('.student-location').text
         name = student.css('.student-name').text
-        students << {name: name, location: location, profile_url: link}
+        students << {profile_url: link, location: location, name: name}
       end
 
     end
@@ -25,9 +25,12 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    student={}
+
     profile=Nokogiri::HTML(open(profile_url))
 
+    student={}
+
+    profile.css()
   end
 
 end
