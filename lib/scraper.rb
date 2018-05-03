@@ -30,6 +30,8 @@ class Scraper
 
     student={}
 
+    student[:profile_quote] = profile.css(".profile-quote").text if profile.css(".profile-quote")
+    student[:bio] = profile.css("div.description-holder p").text if profile.css("div.description-holder p")
     social = profile.css(".social-icon-container").children.css("a").map { |el| el.attribute('href').value}
 
     social.each do |s|
@@ -46,9 +48,6 @@ class Scraper
       end
 
     end
-
-    student[:profile_quote] = profile.css(".profile-quote").text if profile.css(".profile-quote")
-    student[:bio] = profile.css("div.description-holder p").text if profile.css("div.description-holder p")
 
     student
 
