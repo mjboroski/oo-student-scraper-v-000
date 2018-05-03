@@ -46,15 +46,6 @@ class Scraper
       end
     end
 
-    #  links = profile_page.css(".social-icon-container").children.css("a").map { |el| el.attribute('href').value}
-    #  # student[:twitter] = profile_page.css(".social-icon-container").children.css("a")[0].attribute("href").value
-    #  # # if profile_page.css(".social-icon-container").children.css("a")[0]
-    #  # student[:linkedin] = profile_page.css(".social-icon-container").children.css("a")[1].attribute("href").value if profile_page.css(".social-icon-container").children.css("a")[1]
-    #  # student[:github] = profile_page.css(".social-icon-container").children.css("a")[2].attribute("href").value if profile_page.css(".social-icon-container").children.css("a")[2]
-    #  # student[:blog] = profile_page.css(".social-icon-container").children.css("a")[3].attribute("href").value if profile_page.css(".social-icon-container").children.css("a")[3]
-    #  student[:profile_quote] = profile_page.css(".profile-quote").text if profile_page.css(".profile-quote")
-    #  student[:bio] = profile_page.css("div.bio-content.content-holder div.description-holder p").text if profile_page.css("div.bio-content.content-holder div.description-holder p")
-
      student
   end
 
