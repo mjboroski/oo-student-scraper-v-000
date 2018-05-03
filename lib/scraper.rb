@@ -14,7 +14,7 @@ class Scraper
     student_hash[:profile_url]=doc.search("div.student-card.a.href")
 
     Student.all<<student_hash
-
+    Student.all
   end
 
   def self.scrape_profile_page(profile_url)
