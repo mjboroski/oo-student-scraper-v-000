@@ -13,7 +13,7 @@ class Scraper
     student_hash[:name]=doc.search("div.student-name").text
     student_hash[:location]=doc.search("div.student-location").text
 
-    student=Student.new(student_hash)
+    Student.all<<student_hash
 
   end
 
